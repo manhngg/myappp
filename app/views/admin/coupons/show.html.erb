@@ -1,0 +1,29 @@
+<% provide :title, t("order") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button">
+      <%= t "order" %>
+    </div>
+    <div class="panel-body">
+      <div class="panel-footer">
+        <%= link_to t("edit_coupon"), edit_admin_coupon_path(@coupon) %>
+      </div>
+      <table class="table table-striped table-hover">
+        <tr>
+          <th><%= t "product" %></th>
+          <th><%= t "quantity" %></th>
+          <th><%= t "price" %></th>
+          <th><%= t "total_price" %></th>
+          <th><%= t "time_buy" %></th>
+        </tr>
+        <tr>
+          <td><%= @coupon.code %></td>
+          <td><%= @coupon.imported %></td>
+          <td><%= l @coupon.expire %></td>
+          <td><%= @coupon.import %></td>
+          <td><%= @coupon.percent %>%</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

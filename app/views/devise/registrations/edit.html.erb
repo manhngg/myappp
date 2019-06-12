@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="features_items">
+        <h2 class="title text-center"><%= t "edit_profile" %>:
+          <%= @user.name %>
+        </h2>
+      </div>
+      <%= render "form", minimum_password_length: @minimum_password_length %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="features_items">
+        <h2 class="title text-center"><%= "forgot_password" %></h2>
+      </div>
+      <div class="left-sidebar">
+        <div class="brands_products">
+          <div class="brands-name">
+            <%= form_for resource, as: resource_name,
+              url: password_path(resource_name),
+              html: { method: :post } do |f| %>
+
+              <%= devise_error_messages! %>
+
+              <%= f.label t :email %><br />
+              <%= f.email_field :email, autofocus: true %>
+
+              <%= f.submit t("sent_password") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

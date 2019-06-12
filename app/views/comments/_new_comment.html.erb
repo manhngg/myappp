@@ -1,0 +1,10 @@
+<% if user_signed_in? %>
+  <h3><%= t "compose_new_micropost" %></h3>
+  <%= form_for [product, create_comment] do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="field">
+      <%= f.cktext_area :description, placeholder: t("compose_new_micropost") %>
+    </div>
+    <%= f.submit t("post_comment"), class: "btn btn-primary" %>
+  <% end %>
+<% end %>

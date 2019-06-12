@@ -1,0 +1,12 @@
+<% provide :title, t("product") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button"><%= t "product" %></div>
+    <div class="panel-body">
+      <div class="panel-footer">
+        <%= link_to t("add_new_product"), new_admin_product_path %>
+      </div>
+      <%= render "index", products: @products %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<% provide :title, @brand.name %>
+<div class="container">
+  <div class="row">
+    <%= render "brand", brands: @brands %>
+    <div class="col-sm-9 padding-right">
+      <div class="features_items">
+        <h2 class="title text-center">
+          <%= t "products_of" %> <%= @brand.name %>
+        </h2>
+        <% @brand.products.each do |product| %>
+          <div class="col-sm-4">
+            <div class="product-image-wrapper">
+              <div class="single-products">
+                <div class="productinfo text-center">
+                  <%= link_to image_tag(product.image_url, class: "image-size"), product %>
+                  <h2><%= link_to product.name, product %></h2>
+                  <p><%= number_to_currency product.price %></p>
+                  <%= link_to line_items_path(product_id: product), method: :post,
+                    class: "btn btn-default add-to-cart" do %>
+                    <i class="fa fa-shopping-cart"></i>
+                    <%= t("add_to_cart")%>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

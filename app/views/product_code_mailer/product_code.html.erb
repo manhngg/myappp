@@ -1,0 +1,4 @@
+<p><%= t "hi" %> <%= @order.name %></p>
+<p><%= t "content_product_code" %></p>
+<%= link_to t("view_your_order"),
+  edit_order_url(id: @order, product_code: @order.product_code) %>

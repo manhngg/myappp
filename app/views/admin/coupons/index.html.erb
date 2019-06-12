@@ -1,0 +1,13 @@
+<% provide :title, t("coupon") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button"><%= t "coupon" %></div>
+    <div class="panel-body">
+      <div class="panel-footer">
+        <%= link_to t("create_coupon"), new_admin_coupon_path %>
+      </div>
+      <%= render "index", coupons: @coupons %>
+      <div class="panel-footer"><%= will_paginate @coupons %></div>
+    </div>
+  </div>
+</div>

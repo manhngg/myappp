@@ -1,0 +1,6 @@
+<p><%= t "hello" %><%= @email %>!</p>
+<% if @resource.try :unconfirmed_email? %>
+  <p><%= t "changing_password" %><%= @resource.unconfirmed_email %>.</p>
+<% else %>
+  <p><%= t "changed_password" %><%= @resource.email %>.</p>
+<% end %>

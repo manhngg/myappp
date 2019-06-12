@@ -1,0 +1,18 @@
+<% provide :title, t("product") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button">
+      <%= t "product_of" %> <%= @brand.name %>
+    </div>
+    <div class="panel-body">
+      <div class="panel-footer">
+        <%= link_to t("add_new_product"),
+          new_admin_product_path(brand_id: @brand) %> |
+        <%= link_to t("edit_brand"), edit_admin_brand_path(@brand) %> |
+        <%= link_to t("delete_brand"), admin_brand_path(@brand),
+          method: :delete, data: {confirm: t("are_you_sure")} %>
+      </div>
+      <%= render "admin/products/index", products: @products %>
+    </div>
+  </div>
+</div>

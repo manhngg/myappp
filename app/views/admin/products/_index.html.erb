@@ -1,0 +1,19 @@
+<table class="table table-striped table-hover sortable">
+  <thead>
+    <tr>
+      <th><%= t "name_product" %></th>
+      <th><%= t "name_brand" %></th>
+      <th><%= t "price" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.each do |product| %>
+      <tr>
+        <td><%= link_to product.name, admin_product_path(product) %></td>
+        <td><%= link_to product.brand.name, product.brand %></td>
+        <td><%= number_to_currency product.price %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="panel-footer"><%= will_paginate products %></div>

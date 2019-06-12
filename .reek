@@ -1,0 +1,12 @@
+IrresponsibleModule:
+  enabled: false
+
+exclude_paths:
+  - "vendor"
+  - "db/migrate"
+"app/helpers":
+  FeatureEnvy:
+    enabled: false
+"app/controllers":
+  UtilityFunction:
+    public_methods_only: true

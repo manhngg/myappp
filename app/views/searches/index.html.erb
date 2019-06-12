@@ -1,0 +1,7 @@
+<% provide :title, t("search_result") %>
+<div class="container">
+  <div class="row">
+    <%= render "brands/brand", brands: @brands %>
+    <%= render "products/product", products: @products %>
+  </div>
+</div>

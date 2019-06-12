@@ -1,0 +1,16 @@
+
+
+ 1506  bundle
+
+ 1511  rails db:setup
+sudo snap install docker
+ 1527  sudo apt  install docker-compose
+
+
+ 1539  sudo docker-compose build
+ 1540  sudo docker-compose run web rails db:migrate:reset
+sudo docker-compose run web rails db:migrate
+ 1585  sudo docker-compose up
+
+
+

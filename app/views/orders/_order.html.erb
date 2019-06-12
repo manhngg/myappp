@@ -1,0 +1,24 @@
+<div class="container wrapper">
+  <div class="row cart-body">
+    <br /><br />
+    <form class="form-horizontal" method="post" action="">
+      <%= render "order_detail", cart: cart, coupon: coupon %>
+      <div class="col-lg-6 col-md-6 col-sm-6
+        col-xs-12 col-md-pull-6 col-sm-pull-6">
+        <div class="panel panel-info">
+          <div class="add-to-cart-button">
+            <%= t "checkout_form" %>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="col-md-12">
+                <h4><%= t "information" %></h4>
+              </div>
+            </div>
+            <%= render "form", order: order %>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

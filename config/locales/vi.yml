@@ -1,0 +1,284 @@
+vi:
+  layouts:
+    application:
+      en: "Tiếng Anh"
+      vi: "Tiếng Việt"
+  carts:
+    show:
+      invalid: "Giỏ không hợp lệ"
+  line_items:
+    creat:
+      error: "Lỗi"
+      added: "Đã thêm!"
+    destroy:
+      removed: "Đã xóa"
+      not_exist: "Item không tồn tại"
+  mobile_shop: "Cửa hàng điện thoại"
+  changing_password: "Chúng tôi đang liên hệ với bạn để thông báo cho bạn rằng email của bạn đang được thay đổi thành"
+  changed_password: "Chúng tôi đang liên hệ với bạn để thông báo cho bạn rằng email của bạn đã được thay đổi thành"
+  who_change_password: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể thực hiện điều này thông qua liên kết bên dưới."
+  no_see_password: "Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này. Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập liên kết ở trên và tạo một mật khẩu mới."
+  new_password: "mật khẩu mới"
+  characters_minimum: "kí tự tối thiểu"
+  change_password: "Thay đổi mật khẩu"
+  sent_password: "Gửi mật khẩu"
+  wait_confirm: "hiện đang chờ xác nhận"
+  blank: "để trống nếu bạn không muốn thay đổi nó"
+  need_password: "chúng tôi cần mật khẩu hiện tại của bạn để xác nhận thay đổi của bạn"
+  update: "Cập nhật"
+  back: "Trở về"
+  sign_up: "Đăng kí"
+  submit: "Submit"
+  store: "Cửa hàng"
+  home: "Trang chủ"
+  admin: "Admin"
+  user: "Người dùng"
+  profile: "Cá nhân"
+  edit_profile: "Sửa thông tin"
+  logout: "Đăng xuất"
+  log_in: "Đăng nhập"
+  errors: "Lỗi"
+  :password: "Mật khẩu"
+  :name: "Họ và tên"
+  :name_brand: "Tên hãng"
+  :email: "Email"
+  :address: "Địa chỉ"
+  :phone: "Số điện thoại"
+  :password_confirmation: "Xác nhận mật khẩu"
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Có các lỗi sau: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Không thể xóa do tồn tại đối tượng phụ thuộc %{record}
+          has_many: Không thể xóa do tồn tại một số đối tượng phụ thuộc %{record}
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: phải được đồng ý
+      blank: không thể để trắng
+      present: cần phải để trắng
+      confirmation: không khớp với xác nhận
+      empty: không thể rỗng
+      inclusion: không có trong danh sách
+      invalid: không hợp lệ
+      not_a_number: không phải là số
+      not_an_integer: phải là một số nguyên
+      too_long: quá dài (tối đa %{count} ký tự)
+      too_short: quá ngắn (tối thiểu %{count} ký tự)
+      wrong_length: độ dài không đúng (phải là %{count} ký tự)
+      other_than: cần phải khác %{count}
+  helpers:
+    select:
+      prompt: Vui lòng chọn
+    submit:
+      create: Tạo %{model}
+      submit: Lưu %{model}
+      update: Cập nhật %{model}
+  edit: "Sửa"
+  brand_updated: "Hãng đã được cập nhật"
+  created_brand: "Đã tạo hãng mới"
+  brand_deleted: "Đã xóa hãng"
+  failed_brand: "Không tìm thấy hãng này"
+  product_created: "Đã tạo sản phẩm mới"
+  product_updated: "Đã cập nhật sản phẩm này"
+  product_deleted: "Đã xóa sản phẩm này"
+  failed_product: "Không tìm thấy sản phẩm này"
+  user_deleted: "Đã xóa người dùng này"
+  :name_brand: "Tên hãng"
+  edit_brand: "Sửa hãng"
+  all_brands: "Tất cả hãng"
+  new_brand: "Hãng mới"
+  brand: "Hãng"
+  hello: "Xin chào "
+  copyright: "Copyright 2018"
+  :name_product: "Tên sản phẩm"
+  :available: "Tình trạng"
+  :available?: "Còn hàng"
+  :price: "Giá"
+  :description: "Mô tả"
+  :coupon: "Mã giảm giá"
+  create_coupon: "Tạo mã giảm giá"
+  edit_coupon: "Sửa mã giảm giá"
+  :count: "Số lần nhập"
+  :percent: "Phần trăm giảm giá"
+  :brand_id: "Hãng"
+  edit_product: "Sửa sản phẩm"
+  all_products: "Tất cả sản phẩm"
+  new_product: "Sản phẩm mới"
+  index: "Trang chủ"
+  add_to_cart: "Thêm vào giỏ hàng"
+  mobile: "Điện thoại: "
+  stock: "Còn hàng"
+  out_of_stock: "Hết hàng"
+  price: "Giá: "
+  review_order: "Xem đơn hàng"
+  checkout_form: "Thanh toán"
+  information: "Thông tin thanh toán"
+  order_total: "Tổng thanh toán"
+  quantity: "Số lượng"
+  carts: "Giỏ hàng: "
+  carts_size: "Giỏ hàng: 0"
+  number:
+    currency:
+      format:
+        unit: " VNĐ"
+        delimiter: ","
+        separator: "."
+        precision: 0
+        format: "%n%u"
+  status: "Trạng thái"
+  total: "Tổng tiền"
+  by: "bởi"
+  remove_all_product: "Xóa tất cả sản phẩm ở giỏ hàng"
+  checkout: "Thanh toán"
+  checkout_form: "Form thanh toán"
+  are_you_sure: "Bạn có chắc? "
+  back_to_home_to_continue_shopping: "Trở về trang chủ để mua hàng"
+  profile: "Cá nhân"
+  carts_empty: "Giỏ hàng: 0"
+  product: "Sản phẩm"
+  compose_new_micropost: "Bình luận về sản phẩm"
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: khoảng 1 giờ
+        other: khoảng %{count} giờ
+      about_x_months:
+        one: khoảng 1 tháng
+        other: khoảng %{count} tháng
+      about_x_years:
+        one: khoảng 1 năm
+        other: khoảng %{count} năm
+      almost_x_years:
+        one: gần 1 năm
+        other: gần %{count} năm
+      half_a_minute: 30 giây
+      less_than_x_minutes:
+        one: chưa tới 1 phút
+        other: chưa tới %{count} phút
+      less_than_x_seconds:
+        one: chưa tới 1 giây
+        other: chưa tới %{count} giây
+      over_x_years:
+        one: hơn 1 năm
+        other: hơn %{count} năm
+      x_days:
+        one: 1 ngày
+        other: "%{count} ngày"
+      x_minutes:
+        one: 1 phút
+        other: "%{count} phút"
+      x_months:
+        one: 1 tháng
+        other: "%{count} tháng"
+      x_seconds:
+        one: 1 giây
+        other: "%{count} giây"
+  ago: " trước"
+  post_comment: "Bình luận"
+  profile_order: "Thông tin | Đơn hàng"
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"
+  created_at: "Đăng kí"
+  :current_password: "Mật khẩu hiện tại"
+  time_buy: "Thời gian mua hàng"
+  cancelled: "Đã hủy hàng"
+  processing: "Đang xử lí"
+  delivered: "Đã gửi đi"
+  :order: "Đơn hàng"
+  select: "Chọn"
+  overview: "Tổng quan"
+  users: "Thành viên"
+  brands: "Hãng"
+  products: "Sản phẩm"
+  latest_users: "Thành viên mới nhất"
+  joined: "Gia nhập"
+  dashboard: "Bảng điều khiển "
+  manage_your_site: "Quản lý trang web"
+  manage_order: "Quản lí đơn hàng"
+  option: "Tùy chọn"
+  delete: "Xóa"
+  add_new_product: "Thêm sản phẩm mới"
+  add_new_brand: "Thêm hãng mới"
+  name_order: "Tên người đặt"
+  detail: "Chi tiết"
+  total_price: "Tổng tiền"
+  show_order: "Xem chi tiết"
+  comment_created: "Đã tạo bình luận mới"
+  comment_failed: "Tạo bình luận không thành công"
+  comment_deleted: "Đã xóa bình luận này"
+  added: "Đã thêm vào giỏ hàng"
+  create_error: "Thêm sản phẩm vào giỏ hàng không thành công"
+  removed: "Đã xoá tất cả sản phẩm ở giỏ hàng"
+  not_exist: "Sản phẩm không tồn tại"
+  quest: "Khách"
+  content_product_code: "Nhấn vào liên kết dưới đây để xem đơn hàng của quý khách"
+  hi: "Xin chào"
+  view_your_order: "Đơn hàng của bạn"
+  check: "Kiểm tra email để xem đơn hàng của bạn"
+  send_product_code: "Cảm ơn bạn đã đặt hàng"
+  thank: "Cảm ơn bạn đã đặt hàng"
+  30_days_return: "30 ngày hoàn tiền"
+  free-shipping: "Miễn phí giao hàng"
+  secure_payments: "Bảo mật tốt"
+  new_products: "Sản phẩm mới nhất"
+  comment: "Bình luận sản phẩm"
+  cart: "Giỏ hàng"
+  will_paginate:
+    previous_label: "&#8592; Trang trước"
+    next_label: "Trang sau &#8594; "
+    page_gap: "&hellip;"
+  cancel: "Hủy bỏ"
+  delete_brand: "Xóa hãng này"
+  don_have_item: "Không có đơn hàng"
+  products_of: "Sản phẩm của hãng "
+  edit_order: "Sửa đơn hàng"
+  new_order : "Đơn hàng mới"
+  :submit: "Mua hàng"
+  notification: "Thông báo"
+  remove_from_cart: "Xóa khỏi giỏ hàng"
+  coupon_invalid: "Mã giảm giá không tồn tại"
+  current_total: "Thanh toán"
+  order_sale: "Giảm giá"
+  invalid_date: "Ngày đã qua hiện tại hoặc không đúng định dạng"
+  created_coupon: "Đã tạo mã giảm giá"
+  updated_coupon: "Đã cập nhật mã giảm giá"
+  not_found_coupon: "Không tìm thấy mã giảm giá"
+  not_exist_coupon: "Không tồn tại mã giảm giá"
+  helpers:
+    label:
+      coupon:
+        code: "Mã giảm giá"
+        percent: "Phần trăm"
+        import: "Số lần nhập"
+        expire: "Ngày hết hạn"
+  coupon_invalid: "Mã giảm giá không hợp lệ"
+  coupon_success: "Áp dụng mã giảm giá thành công"
+  apply: "Áp dụng"
+  discout: "Nhập mã giảm giá"
+  current: "Tạm tính"
+  sale: "Giảm giá"
+  imported: "Đã nhập"
+  expire: "Thời hạn"
+  limit: "Giới hạn"
+  failed_order: "Không tìm thấy đơn hàng"
+  most_products: "Sản phẩm được mua nhiều nhất"
+  order_updated: "Đã cập nhật đơn hàng"
+  order_deleted: "Đã xóa đơn hàng này"
+  delete_coupon: "Xóa mã giảm giá này"
+  image: "Hình ảnh"
+  remove: "Xóa"
+  cancelled: "Hủy đơn hàng"
+  processing: "Đang xử lí"
+  delivered: "Đã gửi đi"
+  :order_status: "Tình trạng đơn hàng"
+  carts:
+    show:
+      invalid: "Giỏ hàng không tồn tại"
+  confirm_order: "Xác nhận mua đơn hàng này?"
+  no_coupon: "Không có"
+  discount: "Đã giảm"
+  search_result: "Tìm kiếm"
+  mark_as_read: "Đánh dấu đã xem"

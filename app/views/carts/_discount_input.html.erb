@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <td>
+      <div class="form-group has-feedback" >
+        <%= text_field_tag :apply, session[:coupon_code],
+          class: "form-control", id: "coupon-input", placeholder: t("discout") %>
+        <% if session[:coupon_code] %>
+          <i class="glyphicon glyphicon-ok
+            ok-icon form-control-feedback" ></i>
+        <% end %>
+      </div>
+    </td>
+    <td>
+      <button class="btn btn-success" id="discount">
+        <%= t "apply" %>
+      </button>
+    </td>
+  </tr>
+</table>

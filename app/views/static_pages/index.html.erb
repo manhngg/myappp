@@ -1,0 +1,63 @@
+<% provide :title, t("index") %>
+<div class="container">
+  <div class="row">
+    <div class="swiper-container">
+      <div class="features_items">
+        <h2 class="title text-center"><%= t "most_products" %></h2>
+      </div>
+      <div class="swiper-wrapper">
+        <% @popular_products.each do |product| %>
+          <div class="swiper-slide">
+            <%= link_to image_tag(product.image_url, class: "image-size"), product %>
+            <div class="productinfo text-center">
+              <h2><%= link_to product.name, product %></h2>
+              <p><b><%= number_to_currency product.price %></b></p>
+            </div>
+          </div>
+        <% end %>
+      </div><br />
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</div>
+<div class="promo-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6">
+        <div class="single-promo promo1">
+          <i class="fa fa-refresh"></i>
+          <p><%= t "30_days_return" %></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="single-promo promo2">
+          <i class="fa fa-truck"></i>
+          <p><%= t "free-shipping" %></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="single-promo promo3">
+          <i class="fa fa-lock"></i>
+          <p><%= t "secure_payments" %></p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="single-promo promo4">
+          <i class="fa fa-gift"></i>
+          <p><%= t "new_products" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <%= render "sidebar", brands: @supports.brands %>
+    <%= render "products/product", products: @supports.products %>
+  </div>
+</div>
+<div class="panel-footer">
+  <center><%= will_paginate @supports.products %></center>
+</div>

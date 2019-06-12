@@ -1,0 +1,10 @@
+<% provide :title, t("all_products") %>
+<div class="container">
+  <div class="row">
+    <%= render "brands/brand", brands: @brands %>
+    <%= render "product", products: @products %>
+  </div>
+  <div class="panel-footer">
+    <center><%= will_paginate @products %></center>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<table>
+  <tbody>
+    <tr class="order-total">
+      <th><%= t "current" %></th>
+      <td>
+        <strong>
+          <span class="amount" id="cart_price">
+            <%= number_to_currency cart.total_price %>
+          </span>
+        </strong>
+      </td>
+    </tr>
+    <% if coupon %>
+      <tr class="order-total">
+        <th><%= t "sale" %></th>
+        <td>
+          <strong>
+            <span class="amount" id="cart_price">
+              - <%= number_to_currency cart.sale_price(coupon) %>
+            </span>
+          </strong>
+        </td>
+      </tr>
+      <tr class="order-total">
+        <th><%= t "total" %></th>
+        <td>
+          <strong>
+            <span class="amount" id="cart_price">
+              <%= number_to_currency cart.remain_price(coupon) %>
+            </span>
+          </strong>
+        </td>
+      </tr>
+    <% else %>
+      <tr class="order-total">
+        <th><%= t "total" %></th>
+        <td>
+          <strong>
+            <span class="amount" id="cart_price">
+              <%= number_to_currency cart.total_price %>
+            </span>
+          </strong>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

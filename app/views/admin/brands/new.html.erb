@@ -1,0 +1,9 @@
+<% provide :title, t("new_brand") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button"><%= t "brand" %></div>
+    <div class="panel-body">
+      <%= render "form", brand: @brand %>
+    </div>
+  </div>
+</div>

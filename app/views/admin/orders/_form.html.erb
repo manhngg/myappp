@@ -1,0 +1,21 @@
+<%= form_for [:admin, order] do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label t :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label t :address %>
+  <%= f.text_field :address, class: "form-control" %>
+
+  <%= f.label t :email %>
+  <%= f.text_field :address, class: "form-control" %>
+
+  <%= f.label t :phone %>
+  <%= f.number_field :phone, class: "form-control" %>
+
+  <%= f.label t :order_status %><br />
+  <%= f.select :order_status, order_statuses, {}, class: "form-control" %>
+  <br /><br />
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

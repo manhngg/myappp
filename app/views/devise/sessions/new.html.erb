@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="features_items">
+        <h2 class="title text-center"><%= t "log_in" %></h2>
+      </div>
+      <div class="left-sidebar">
+        <div class="brands_products">
+          <div class="col-md-6 col-md-push-3">
+            <div class="brands-name">
+              <%= form_for resource, as: resource_name,
+                url: session_path(resource_name) do |f| %>
+
+                <%= f.label t :email %><br />
+                <%= f.email_field :email, autofocus: true,
+                  class: "form-control" %><br />
+
+                <%= f.label t :password %><br />
+                <%= f.password_field :password, class: "form-control" %><br />
+
+                <% if devise_mapping.rememberable? -%>
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %><br />
+                <% end %>
+                <%= link_to t("forgot_password"),
+                  new_user_password_path  %><br />
+
+                <%= f.submit t("log_in") %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

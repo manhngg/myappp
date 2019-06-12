@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield :title %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application",
+      media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "jquery.easy-autocomplete.min.js",
+      "data-turbolinks-track": "reload" %>
+  </head>
+  <body>
+    <%= render "layouts/header" %>
+    <div class="container">
+      <div class="row">
+        <% flash.each do |message_type, message| %>
+          <br /><%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+        <% end %>
+      </div>
+    </div>
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          <%= render "layouts/header_admin" %>
+          <%= render "layouts/sidebar" %>
+          <%= yield %>
+        </div>
+      </div>
+    </section>
+    <%= render "layouts/footer" %>
+  </body>
+</html>

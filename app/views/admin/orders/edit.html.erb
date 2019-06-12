@@ -1,0 +1,11 @@
+<% provide :title, t("edit_product") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button">
+      <%= t "order" %>
+    </div>
+    <div class="panel-body">
+      <%= render "form", order: @order, order_statuses: @order_statuses %>
+    </div>
+  </div>
+</div>

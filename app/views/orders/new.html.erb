@@ -1,0 +1,3 @@
+<% provide :title, t("new_order") %>
+<%= render "order", order: @support_order.order,
+  cart: @cart, coupon: @support_order.coupon %>

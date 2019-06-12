@@ -1,0 +1,110 @@
+<div class="header-area navbar-fixed-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="user-menu">
+          <ul>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-user"></i> <%= t("home") %>
+              <% end %>
+            </li>
+            <% if user_signed_in? %>
+              <% if current_user && current_user.admin? %>
+                <li class="message-nav dropdown">
+                  <i class="fa fa-bell-o" data-toggle="dropdown" id="notify">
+                    <span class="badge" id="notify-count"></span>
+                  </i>
+                  <ul class="dropdown-menu dropdown-menu-left">
+                    <li class="notification-title">
+                      <span><p class="right" id="mark"><%= t("mark_as_read")%></p></span>
+                    </li>
+                    <ul class="notification-list scrollable-menu" id="notify-list">
+                    </ul>
+                  </ul>
+                </li>
+                <li>
+                  <%= link_to admin_static_pages_path do %>
+                    <i class="fa fa-user"></i> <%= t("admin") %>
+                  <% end %>
+                </li>
+              <% end %>
+              <li>
+                <%= link_to current_user do %>
+                  <i class="fa fa-user"></i> <%= t("profile_order") %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="header-right">
+          <ul class="list-unstyled list-inline">
+            <% if cart_size %>
+              <%= link_to cart_path(session[:cart_id]) do %>
+                <%= t "cart" %>
+                <i class="fa fa-shopping-cart"></i>:
+                <span id="cart_size"><%= cart_size %></span>
+              <% end %>
+            <% end %>
+            <li>
+              <%= form_with url: search_path, local: true, method: :get,
+                html: {class: "fom-inline my-2 my-lg-2"}, id: "search" do |f| %>
+                <%= f.text_field :q, data: {behavior: "autocomplete"},
+                  class: "form-control mr-sm-2", id: "text_input" %>
+              <% end %>
+            </li>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa fa-user"></i> <%= t("edit_profile") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  <i class="fa fa-user"></i> <%= t("logout") %>
+                <% end %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to new_user_registration_path do %>
+                  <i class="fa fa-user"></i> <%= t("sign_up") %>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_user_session_path do %>
+                  <i class="fa fa-user"></i> <%= t("log_in") %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div class="site-branding-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="logo">
+          <h1><%= link_to image_tag("logo"), root_path %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="mainmenu-area">
+  <div class="container">
+    <div class="row">
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to t("home"), root_path %></li>
+          <li><%= link_to t("products"), products_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

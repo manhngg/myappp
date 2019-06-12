@@ -1,0 +1,56 @@
+<div class="col-md-8">
+  <div class="features-items">
+    <h2 class="title text-center"><%= t "product" %></h2>
+  </div>
+  <table class="shop-table cart">
+    <thead>
+      <tr>
+        <th><%= t "image" %></th>
+        <th><%= t "product" %></th>
+        <th><%= t "quantity" %></th>
+        <th><%= t "price" %></th>
+        <th><%= t "total" %></th>
+        <th><%= t "remove" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cart.line_items.each do |item| %>
+        <tr class="cart_item" id=<%= item.id %>>
+          <td class="product-thumbnail">
+            <%= image_tag item.product.image_url %>
+          </td>
+          <td class="product-name">
+            <%= link_to item.product.name, item.product %>
+          </td>
+          <td>
+            <div class="quantity buttons_added">
+              <%= link_to "+", line_item_path(item.id, method: "line_items"),
+                class: "minus", method: :patch, remote: true %>
+               <input type="number" size="4"
+                value="<%= item.quantity %>" readonly>
+              <%= link_to "-", line_item_path(item.id, method: "decrease"),
+                class: "minus", method: :patch, remote: true %>
+            </div>
+          </td>
+          <td>
+            <span class="amount">
+              <%= number_to_currency item.product.price %>
+            </span>
+          </td>
+          <td>
+            <span class="amount">
+              <%= number_to_currency item.total_price %>
+            </span>
+          </td>
+          <td class="product-remove">
+            <%= link_to item, method: :delete, remote: true,
+              data: {confirm: t("are_you_sure")},
+              class: "btn btn-danger" do %>
+              <span class="glyphicon glyphicon-remove"></span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

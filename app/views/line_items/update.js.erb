@@ -1,0 +1,3 @@
+$('#list_item').html('<%= j render "carts/list_item", cart: @cart %>');
+$('#total_price').html('<%= j render "carts/total_price", cart: @cart,
+  coupon: @coupon %>');

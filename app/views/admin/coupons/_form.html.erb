@@ -1,0 +1,27 @@
+<%= form_for [:admin, coupon] do |f| %>
+  <%= render "shared/error_messages", object: coupon %>
+
+  <div class="form-group">
+    <%= f.label :code %>
+    <%= f.text_field :code , class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :expire %>
+    <%= f.date_field :expire, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :import %>
+    <%= f.number_field :import, min: Settings.zero, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :percent %>
+    <%= f.number_field :percent,
+      in: Settings.percent.minimum..Settings.percent.maximum,
+      class: "form-control" %>
+  </div>
+
+  <%= f.submit yield(:request) %>
+<% end %>

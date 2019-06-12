@@ -1,0 +1,48 @@
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
+  <div class="panel panel-info">
+    <div class="add-to-cart-button">
+      <%= t :review_order %>
+      <div class="pull-right">
+        <small>
+          <% if session[:cart_id] %>
+            <%= link_to t("edit"), cart_path(session[:cart_id]) %>
+          <% end %>
+        </small>
+      </div>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped table-hover">
+        <% cart.line_items.each do |item| %>
+          <tr>
+            <td><%= link_to item.product.name, item.product %></td>
+            <td><%= t "quantity" %>: <%= item.quantity %></td>
+            <td><%= t "total_price" %>: <%= number_to_currency item.total_price %></td>
+          </tr>
+        <% end %>
+      </table>
+      <% if coupon %>
+        <table class="table table-striped table-hover">
+          <tr>
+            <th><%= t "current_total" %>: </th>
+            <th><%= number_to_currency cart.total_price %></th>
+          </tr>
+          <tr>
+            <th><%= t "order_sale" %>: </th>
+            <th>- <%= number_to_currency cart.sale_price coupon %></th>
+          </tr>
+          <tr>
+            <th><%= t "order_total" %>: </th>
+            <th><%= number_to_currency cart.remain_price coupon %></th>
+          </tr>
+        </table>
+      <% else %>
+        <table class="table table-striped table-hover">
+          <tr>
+            <th><%= t "order_total" %>: </th>
+            <th><%= number_to_currency cart.total_price %></th>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

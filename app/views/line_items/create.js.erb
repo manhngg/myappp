@@ -1,0 +1,5 @@
+$(document).ready(function() {
+  $('#cart_size').html('<%= cart_size %>');
+  $('#cart').html('<%= cart_size %>');
+  toastr.success('<%= t "add_to_cart" %>');
+});

@@ -1,0 +1,7 @@
+<div class="nested-fields">
+  <% if f.object.photo? %>
+    <%= image_tag f.object.photo_url, class: "thumb" %>
+    <%= link_to_remove_association t("remove_image"), f %>
+  <% end %>
+  <%= f.file_field :photo %>
+</div>

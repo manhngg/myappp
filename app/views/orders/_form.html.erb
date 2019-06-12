@@ -1,0 +1,66 @@
+<%= form_for order, url: new_order_path do |f|%>
+  <%= render "shared/error_messages", object: f.object %>
+  <% if current_user %>
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :name %>
+        <%= f.text_field :name, value: current_user.name,
+          class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :email %>
+        <%= f.text_field :email, value: current_user.email,
+          class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :address %>
+        <%= f.text_field :address, value: current_user.address,
+          class: "form-control" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :phone %>
+        <%= f.number_field :phone, value: current_user.phone,
+          class: "form-control" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :address %>
+        <%= f.text_field :address, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-12">
+        <%= f.label :phone %>
+        <%= f.number_field :phone, class: "form-control" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <div class="col-md-12">
+      <%= f.submit t(:submit), data: {confirm: t("confirm_order")} %>
+    </div>
+  </div>
+<% end %>

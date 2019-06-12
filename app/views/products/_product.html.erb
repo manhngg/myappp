@@ -1,0 +1,34 @@
+<div class="col-sm-9 padding-right">
+  <div class="features_items">
+    <h2 class="title text-center"><%= t "products" %></h2>
+    <% products.each do |product| %>
+      <div class="col-sm-4">
+        <div class="product-image-wrapper">
+          <div class="single-products">
+            <div class="productinfo text-center">
+              <%= link_to image_tag(product.image_url,
+                class: "image-size"), product %>
+              <h2><%= link_to product.name, product %></h2>
+              <p><b><%= number_to_currency product.price %></b></p>
+              <% if product.available? %>
+                <p><%= t "available" %>: <b><%= t("stock")%></b></p>
+                <%= link_to line_items_path(product_id: product), method: :post,
+                  remote: true, class: "btn btn-default add-to-cart" do %>
+                  <i class="fa fa-shopping-cart"></i>
+                  <%= t "add_to_cart" %>
+                <% end %>
+              <% else %>
+                <p><%= t "available" %>: <b><%= t("out_of_stock")%></b></p>
+                <%= link_to "#", class: "btn btn-default add-to-cart",
+                  disabled: true do %>
+                  <i class="fa fa-shopping-cart"></i>
+                  <%= t "add_to_cart" %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

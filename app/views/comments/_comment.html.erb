@@ -1,0 +1,28 @@
+<div class="features_items">
+  <h2 class="title text-center"><%= t "comment" %></h2>
+</div>
+<div class="category-tab shop-details-tab">
+  <% comments.each do |comment| %>
+    <div class="reviews" >
+      <div class="col-sm-12">
+        <ul>
+          <li><i class="fa fa-user"></i> <%= comment.user.name %></li>
+          <li>
+            <i class="fa fa-clock-o"></i>
+            <%= time_ago_in_words comment.created_at %>
+          </li>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to product_comment_path(product, comment),
+                method: :delete, data: {confirm: t("are_you_sure")} do %>
+                <i class="fa fa-trash-o fa-fw"></i>
+              <% end %>
+            <% end %>
+          </li>
+        </ul>
+        <p><%= sanitize comment.description.html_safe %></p>
+        <hr>
+      </div>
+    </div>
+  <% end %>
+</div>

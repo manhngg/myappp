@@ -1,0 +1,10 @@
+<% content_for :request, t("create_coupon") %>
+<% provide :title, t("create_coupon") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button"><%= t "create_coupon" %></div>
+    <div class="panel-body">
+      <%= render "form", coupon: @coupon %>
+    </div>
+  </div>
+</div>

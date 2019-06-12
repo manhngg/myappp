@@ -1,0 +1,41 @@
+<% provide :title, t("cart") %>
+<div class="container">
+  <div class="row">
+    <% if @cart.line_items.empty? %>
+      <div class="fixed-footer-bottom">
+        <div class="col-md-12">
+          <div class="features-items">
+            <h2 class="title text-center"><%= t "don_have_item" %></h2>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div id="list_item" %>
+        <%= render "list_item", cart: @cart %>
+      </div>
+      <div class="col-md-4">
+        <div class="features-items">
+          <h2 class="title text-center"><%= t "order" %></h2>
+        </div>
+        <div class="cart-totals">
+          <div id="total_price">
+            <%= render "total_price", cart: @cart, coupon: @coupon %>
+          </div>
+          <%= render "discount_input", cart: @cart %>
+        </div>
+        <%= link_to new_order_path, class: "submit" do %>
+          <span class="glyphicon glyphicon-play"></span>
+          <%= t "checkout" %>
+        <% end %>
+        <br /><br />
+        <%= link_to @cart, method: :delete, data: {confirm: t("are_you_sure")},
+          class: "submit" do %>
+          <%= t "remove_all_product" %>
+        <% end %>
+        <br /><br />
+        <%= link_to t("back_to_home_to_continue_shopping"),
+          root_path, class: "submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>

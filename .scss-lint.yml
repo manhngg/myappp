@@ -1,0 +1,7 @@
+scss_files: 'app/assets/stylesheets/**'
+exclude:
+  - 'app/assets/stylesheets/application.css'
+  - 'app/assets/stylesheets/easy-autocomplete.min.css'
+  - 'app/assets/stylesheets/swiper.min.css'
+  - 'app/assets/stylesheets/easy-autocomplete.themes.min.css'
+  - 'vendor/assets/**'

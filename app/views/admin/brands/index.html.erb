@@ -1,0 +1,28 @@
+<% provide :title, t("brand") %>
+<div class="col-md-9">
+  <div class="panel panel-primary">
+    <div class="add-to-cart-button"><%= t "brand" %></div>
+    <div class="panel-body">
+      <div class="panel-footer">
+        <%= link_to t("add_new_brand"), new_admin_brand_path %>
+      </div>
+      <table class="table table-striped table-hover sortable">
+        <thead>
+          <tr>
+            <th><%= t "name_brand" %></th>
+            <th><%= t "quantity" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @brands.each do |brand| %>
+            <tr>
+              <td><%= link_to brand.name, admin_brand_path(brand) %></td>
+              <td><%= brand.products.size %> <%= t "product" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="panel-footer"><%= will_paginate @brands %></div>
+    </div>
+  </div>
+</div>

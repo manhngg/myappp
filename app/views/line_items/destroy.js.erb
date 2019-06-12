@@ -1,0 +1,11 @@
+if ('<%= cart_size %>' == 0) {
+  location.reload();
+}
+$('#total_price').html('<%= j render "carts/total_price", cart: @cart,
+  coupon: @coupon %>');
+$('#list_item').html('<%= j render "carts/list_item", cart: @cart %>');
+$(document).ready(function() {
+  $('#cart_size').html('<%= cart_size %>');
+  $('#cart').html('<%= cart_size %>');
+  toastr.success('<%= t "remove_from_cart" %>');
+});

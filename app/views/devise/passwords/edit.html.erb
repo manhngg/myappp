@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="features_items">
+        <h2 class="title text-center"><%= t "change_password" %></h2>
+      </div>
+      <div class="left-sidebar">
+        <div class="brands_products">
+          <div class="brands-name">
+            <%= form_for resource, as: resource_name,
+              url: password_path(resource_name), html: {method: :put} do |f| %>
+
+              <%= devise_error_messages! %>
+              <%= f.hidden_field :reset_password_token %>
+
+              <%= f.label t :password, "new_password" %><br />
+              <% if @minimum_password_length %>
+                <em>
+                  (<%= @minimum_password_length %><%= t "characters minimum" %>)
+                </em><br />
+              <% end %>
+              <%= f.password_field :password, autofocus: true %><br />
+
+              <%= f.label t :password_confirmation,
+                t("confirm_new_password") %><br />
+              <%= f.password_field :password_confirmation %><br /><br />
+
+              <%= f.submit t("change_password") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
